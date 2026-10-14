@@ -1,0 +1,1 @@
+public abstract class Shape{public abstract double area();public abstract double perimeter();protected static double positive(double v){if(!Double.isFinite(v)||v<=0)throw new IllegalArgumentException();return v;}}

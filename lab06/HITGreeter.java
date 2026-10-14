@@ -1,0 +1,1 @@
+public class HITGreeter implements EnglishGreeting,ShonaGreeting{@Override public String hello(){return EnglishGreeting.super.hello()+" | "+ShonaGreeting.super.hello();}public static void main(String[]a){System.out.println(new HITGreeter().hello());}}
