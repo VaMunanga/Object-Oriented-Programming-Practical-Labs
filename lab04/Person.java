@@ -1,1 +1,21 @@
-import java.util.Objects; public class Person {private final String name;private final int age;public Person(String n,int a){Objects.requireNonNull(n);if(n.isBlank()||a<0)throw new IllegalArgumentException();name=n.trim();age=a;}public String display(){return name+", age "+age;}public static void main(String[]a){System.out.println(new Person("Rudo",21).display());}}
+import java.util.Objects;
+
+public class Person {
+    private final String name;
+    private final int age;
+
+    public Person(String n, int a) {
+        Objects.requireNonNull(n);
+        if (n.isBlank() || a < 0) throw new IllegalArgumentException();
+        name = n.trim();
+        age = a;
+    }
+
+    public String display() {
+        return name + ", age " + age;
+    }
+
+    public static void main(String[] a) {
+        System.out.println(new Person("Rudo", 21).display());
+    }
+}

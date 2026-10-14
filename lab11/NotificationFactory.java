@@ -1,1 +1,13 @@
-public class NotificationFactory{public static Notification create(String t){return switch(t.toLowerCase()){case"email"->new EmailNotification();case"sms"->new SmsNotification();default->throw new IllegalArgumentException("unknown notification: "+t);};}public static void main(String[]a){System.out.println(create("sms").send("Library reminder"));}}
+public class NotificationFactory {
+    public static Notification create(String t) {
+        return switch (t.toLowerCase()) {
+            case "email" -> new EmailNotification();
+            case "sms" -> new SmsNotification();
+            default -> throw new IllegalArgumentException("unknown notification: " + t);
+        };
+    }
+
+    public static void main(String[] a) {
+        System.out.println(create("sms").send("Library reminder"));
+    }
+}

@@ -1,1 +1,15 @@
-public final class Lab05Runner{public static void main(String[]a){System.out.println("=== Lab 05 - Exercise 1: Overloading ===");Printer.main(a);System.out.println("\n=== Lab 05 - Exercise 2: Animal Dispatch ===");Duck.main(a);System.out.println("\n=== Lab 05 - Exercise 3: Payroll Polymorphism ===");Employee[]e={new Manager("Rudo",15000,3000),new Developer("Leo",14000),new Intern("Tadiwa",5000)};System.out.println(java.util.Arrays.stream(e).mapToDouble(Employee::monthlyPay).sum());System.out.println("\n=== Lab 05 - Exercise 4: Dynamic vs Static Binding ===");BindingChild.main(a);System.out.println("\n=== Lab 05 - Exercise 5: Payment Designs ===");PaymentProcessor.main(a);}}
+public final class Lab05Runner {
+    public static void main(String[] a) {
+        System.out.println("=== Lab 05 - Exercise 1: Overloading ===");
+        Printer.main(a);
+        System.out.println("\n=== Lab 05 - Exercise 2: Animal Dispatch ===");
+        Duck.main(a);
+        System.out.println("\n=== Lab 05 - Exercise 3: Payroll Polymorphism ===");
+        Employee[] e = {new Manager("Rudo", 15000, 3000), new Developer("Leo", 14000), new Intern("Tadiwa", 5000)};
+        System.out.println(java.util.Arrays.stream(e).mapToDouble(Employee::monthlyPay).sum());
+        System.out.println("\n=== Lab 05 - Exercise 4: Dynamic vs Static Binding ===");
+        BindingChild.main(a);
+        System.out.println("\n=== Lab 05 - Exercise 5: Payment Designs ===");
+        PaymentProcessor.main(a);
+    }
+}

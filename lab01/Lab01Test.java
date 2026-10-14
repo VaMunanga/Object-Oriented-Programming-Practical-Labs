@@ -25,7 +25,7 @@ public final class Lab01Test {
     }
 
     private static void testRectangleCalculationsAndLargestSelection() {
-        var rectangles = new Rectangle[] {
+        var rectangles = new Rectangle[]{
                 new Rectangle(2, 3),
                 new Rectangle(4, 5),
                 new Rectangle(8, 2),

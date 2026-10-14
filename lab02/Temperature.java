@@ -2,7 +2,8 @@ public class Temperature {
     private final double kelvin;
 
     private Temperature(double kelvin) {
-        if (!Double.isFinite(kelvin) || kelvin < 0) throw new IllegalArgumentException("temperature is below absolute zero");
+        if (!Double.isFinite(kelvin) || kelvin < 0)
+            throw new IllegalArgumentException("temperature is below absolute zero");
         this.kelvin = kelvin;
     }
 
@@ -14,9 +15,17 @@ public class Temperature {
         return fromCelsius((fahrenheit - 32) * 5 / 9);
     }
 
-    public double getKelvin() { return kelvin; }
-    public double getCelsius() { return kelvin - 273.15; }
-    public double getFahrenheit() { return getCelsius() * 9 / 5 + 32; }
+    public double getKelvin() {
+        return kelvin;
+    }
+
+    public double getCelsius() {
+        return kelvin - 273.15;
+    }
+
+    public double getFahrenheit() {
+        return getCelsius() * 9 / 5 + 32;
+    }
 
     public static void main(String[] args) {
         // EXPLAIN: named factories state the input unit; overloaded double constructors could not.

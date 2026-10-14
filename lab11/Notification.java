@@ -1,1 +1,3 @@
-public interface Notification{String send(String message);}
+public interface Notification {
+    String send(String message);
+}

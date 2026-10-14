@@ -1,1 +1,26 @@
-import java.util.*;public enum Coin{PENNY(1),NICKEL(5),DIME(10),QUARTER(25);private final int cents;Coin(int c){cents=c;}public static Map<Coin,Integer>minimumCoins(int amount){if(amount<0)throw new IllegalArgumentException();var r=new LinkedHashMap<Coin,Integer>();var values=new Coin[]{QUARTER,DIME,NICKEL,PENNY};for(var c:values){int n=amount/c.cents;if(n>0)r.put(c,n);amount%=c.cents;}return Collections.unmodifiableMap(r);}public static void main(String[]a){System.out.println(minimumCoins(99));}}
+import java.util.*;
+
+public enum Coin {
+    PENNY(1), NICKEL(5), DIME(10), QUARTER(25);
+    private final int cents;
+
+    Coin(int c) {
+        cents = c;
+    }
+
+    public static Map<Coin, Integer> minimumCoins(int amount) {
+        if (amount < 0) throw new IllegalArgumentException();
+        var r = new LinkedHashMap<Coin, Integer>();
+        var values = new Coin[]{QUARTER, DIME, NICKEL, PENNY};
+        for (var c : values) {
+            int n = amount / c.cents;
+            if (n > 0) r.put(c, n);
+            amount %= c.cents;
+        }
+        return Collections.unmodifiableMap(r);
+    }
+
+    public static void main(String[] a) {
+        System.out.println(minimumCoins(99));
+    }
+}

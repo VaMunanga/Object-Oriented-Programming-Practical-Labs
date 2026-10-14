@@ -1,1 +1,4 @@
-@FunctionalInterface public interface DiscountStrategy{double apply(double price);}
+@FunctionalInterface
+public interface DiscountStrategy {
+    double apply(double price);
+}

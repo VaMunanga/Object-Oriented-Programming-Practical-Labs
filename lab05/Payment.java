@@ -1,1 +1,5 @@
-public interface Payment{String process();double amountZiG();}
+public interface Payment {
+    String process();
+
+    double amountZiG();
+}

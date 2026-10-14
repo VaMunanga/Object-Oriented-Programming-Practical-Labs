@@ -4,7 +4,7 @@ public final class Lab01Runner {
 
     public static void main(String[] args) {
         System.out.println("=== Lab 01 - Exercise 1: Cars ===");
-        var cars = new Car[] {
+        var cars = new Car[]{
                 new Car("Toyota Corolla", 1997, 245_000),
                 new Car("Honda Fit", 2018, 88_500),
                 new Car("Mazda Demio", 2022, 34_100)
@@ -15,7 +15,7 @@ public final class Lab01Runner {
         }
 
         System.out.println("\n=== Lab 01 - Exercise 2: Rectangle Array ===");
-        var rectangles = new Rectangle[] {
+        var rectangles = new Rectangle[]{
                 new Rectangle(3, 4), new Rectangle(5, 6), new Rectangle(2, 8),
                 new Rectangle(7, 5), new Rectangle(4, 4)
         };

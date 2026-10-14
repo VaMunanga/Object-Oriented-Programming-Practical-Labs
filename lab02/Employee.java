@@ -7,8 +7,13 @@ public class Employee {
     private final String role;
     private final double monthlySalaryZiG;
 
-    public Employee() { this("New Employee"); }
-    public Employee(String name) { this(name, "Trainee", 6_050.00); }
+    public Employee() {
+        this("New Employee");
+    }
+
+    public Employee(String name) {
+        this(name, "Trainee", 6_050.00);
+    }
 
     public Employee(String name, String role, double monthlySalaryZiG) {
         this.employeeId = ++nextEmployeeId;
@@ -25,10 +30,21 @@ public class Employee {
         // EXPLAIN: this is a distinct heap object with copied values and a new employee identity.
     }
 
-    public int getEmployeeId() { return employeeId; }
-    public String getName() { return name; }
-    public String getRole() { return role; }
-    public double getMonthlySalaryZiG() { return monthlySalaryZiG; }
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public double getMonthlySalaryZiG() {
+        return monthlySalaryZiG;
+    }
 
     private static String text(String value, String field) {
         Objects.requireNonNull(value, field + " cannot be null");
@@ -36,7 +52,8 @@ public class Employee {
         return value.trim();
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return "%d: %s, %s, ZiG %,.2f".formatted(employeeId, name, role, monthlySalaryZiG);
     }
 

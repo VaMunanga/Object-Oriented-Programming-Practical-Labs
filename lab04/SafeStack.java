@@ -1,3 +1,36 @@
-import java.util.ArrayList;import java.util.List;import java.util.NoSuchElementException;
-public class SafeStack<T>{private final List<T>elements=new ArrayList<>();public void push(T v){elements.add(v);}public T pop(){if(elements.isEmpty())throw new NoSuchElementException("stack empty");return elements.remove(elements.size()-1);}public T peek(){if(elements.isEmpty())throw new NoSuchElementException("stack empty");return elements.get(elements.size()-1);}public boolean isEmpty(){return elements.isEmpty();}public List<T>snapshot(){return List.copyOf(elements);} // EXPLAIN: composition does not expose add(index), clear, or other invariant-breaking List operations.
-public static void main(String[]a){var s=new SafeStack<String>();s.push("HIT");s.push("Java");System.out.println(s.pop());}}
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+
+public class SafeStack<T> {
+    private final List<T> elements = new ArrayList<>();
+
+    public void push(T v) {
+        elements.add(v);
+    }
+
+    public T pop() {
+        if (elements.isEmpty()) throw new NoSuchElementException("stack empty");
+        return elements.remove(elements.size() - 1);
+    }
+
+    public T peek() {
+        if (elements.isEmpty()) throw new NoSuchElementException("stack empty");
+        return elements.get(elements.size() - 1);
+    }
+
+    public boolean isEmpty() {
+        return elements.isEmpty();
+    }
+
+    public List<T> snapshot() {
+        return List.copyOf(elements);
+    } // EXPLAIN: composition does not expose add(index), clear, or other invariant-breaking List operations.
+
+    public static void main(String[] a) {
+        var s = new SafeStack<String>();
+        s.push("HIT");
+        s.push("Java");
+        System.out.println(s.pop());
+    }
+}

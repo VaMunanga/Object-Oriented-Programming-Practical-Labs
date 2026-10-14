@@ -38,7 +38,7 @@ public final class Lab02Test {
         check(initial.equals(List.of("static block 1", "static block 2")), "Static blocks run once in source order");
         new InitOrderDemo();
         check(InitOrderDemo.trace().equals(List.of(
-                "static block 1", "static block 2", "instance block 1", "instance block 2", "constructor")),
+                        "static block 1", "static block 2", "instance block 1", "instance block 2", "constructor")),
                 "Instance blocks run before the constructor in source order");
     }
 
@@ -62,7 +62,9 @@ public final class Lab02Test {
     }
 
     private static void throwsType(Class<? extends Throwable> type, Runnable action, String message) {
-        try { action.run(); } catch (Throwable error) {
+        try {
+            action.run();
+        } catch (Throwable error) {
             if (type.isInstance(error)) return;
             throw new AssertionError(message + ": wrong exception", error);
         }

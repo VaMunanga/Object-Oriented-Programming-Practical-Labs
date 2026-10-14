@@ -1,1 +1,41 @@
-import java.util.*;public final class Lab07Test{public static void main(String[]a)throws Exception{check(DivisionUtility.divide("10","2").equals("5"),"divide");check(DivisionUtility.divide("ten","2").contains("non-numeric"),"parse");check(DivisionUtility.divide("10","0").contains("zero"),"zero");check(DivisionUtility.safeElement(new int[]{4,5},9).isEmpty(),"index");AgeValidator.validateAge(0);AgeValidator.validateAge(120);throwsChecked(InvalidAgeException.class,()->AgeValidator.validateAge(121),"age");var b=new BankAccount("Tadiwa",500);try{b.withdraw(650);throw new AssertionError("funds");}catch(InsufficientFundsException e){check(e.getShortfall()==150&&b.getBalance()==500,"shortfall/state");}var trace=new ArrayList<String>();check(FinallyDemo.returnWithFinally(trace)==21&&trace.equals(List.of("try","finally")),"finally order");System.out.println("Lab07Test: PASS");}interface Checked{void run()throws Exception;}static void throwsChecked(Class<? extends Throwable>t,Checked r,String m)throws Exception{try{r.run();}catch(Throwable e){if(t.isInstance(e))return;throw new AssertionError(m,e);}throw new AssertionError(m);}static void check(boolean c,String m){if(!c)throw new AssertionError(m);}}
+import java.util.*;
+
+public final class Lab07Test {
+    public static void main(String[] a) throws Exception {
+        check(DivisionUtility.divide("10", "2").equals("5"), "divide");
+        check(DivisionUtility.divide("ten", "2").contains("non-numeric"), "parse");
+        check(DivisionUtility.divide("10", "0").contains("zero"), "zero");
+        check(DivisionUtility.safeElement(new int[]{4, 5}, 9).isEmpty(), "index");
+        AgeValidator.validateAge(0);
+        AgeValidator.validateAge(120);
+        throwsChecked(InvalidAgeException.class, () -> AgeValidator.validateAge(121), "age");
+        var b = new BankAccount("Tadiwa", 500);
+        try {
+            b.withdraw(650);
+            throw new AssertionError("funds");
+        } catch (InsufficientFundsException e) {
+            check(e.getShortfall() == 150 && b.getBalance() == 500, "shortfall/state");
+        }
+        var trace = new ArrayList<String>();
+        check(FinallyDemo.returnWithFinally(trace) == 21 && trace.equals(List.of("try", "finally")), "finally order");
+        System.out.println("Lab07Test: PASS");
+    }
+
+    interface Checked {
+        void run() throws Exception;
+    }
+
+    static void throwsChecked(Class<? extends Throwable> t, Checked r, String m) throws Exception {
+        try {
+            r.run();
+        } catch (Throwable e) {
+            if (t.isInstance(e)) return;
+            throw new AssertionError(m, e);
+        }
+        throw new AssertionError(m);
+    }
+
+    static void check(boolean c, String m) {
+        if (!c) throw new AssertionError(m);
+    }
+}

@@ -46,7 +46,7 @@ public class Rectangle {
     }
 
     public static void main(String[] args) {
-        var rectangles = new Rectangle[] {
+        var rectangles = new Rectangle[]{
                 new Rectangle(3, 4), new Rectangle(5, 6), new Rectangle(2, 8),
                 new Rectangle(7, 5), new Rectangle(4, 4)
         };

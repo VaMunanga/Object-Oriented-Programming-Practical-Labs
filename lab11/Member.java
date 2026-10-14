@@ -1,1 +1,41 @@
-import java.util.*;public class Member{public static final int MAX_LOANS=3;private final String id,name;private final Set<String>active=new HashSet<>();public Member(String i,String n){id=LibraryItem.text(i);name=LibraryItem.text(n);}public String id(){return id;}public String name(){return name;}public Set<String>activeLoanItemIds(){return Set.copyOf(active);}void ensureCanBorrow()throws MemberLimitExceededException{if(active.size()>=MAX_LOANS)throw new MemberLimitExceededException(id);}void add(String item){active.add(item);}void remove(String item){active.remove(item);}@Override public String toString(){return id+" "+name+" active loans="+active.size();}}
+import java.util.*;
+
+public class Member {
+    public static final int MAX_LOANS = 3;
+    private final String id, name;
+    private final Set<String> active = new HashSet<>();
+
+    public Member(String i, String n) {
+        id = LibraryItem.text(i);
+        name = LibraryItem.text(n);
+    }
+
+    public String id() {
+        return id;
+    }
+
+    public String name() {
+        return name;
+    }
+
+    public Set<String> activeLoanItemIds() {
+        return Set.copyOf(active);
+    }
+
+    void ensureCanBorrow() throws MemberLimitExceededException {
+        if (active.size() >= MAX_LOANS) throw new MemberLimitExceededException(id);
+    }
+
+    void add(String item) {
+        active.add(item);
+    }
+
+    void remove(String item) {
+        active.remove(item);
+    }
+
+    @Override
+    public String toString() {
+        return id + " " + name + " active loans=" + active.size();
+    }
+}

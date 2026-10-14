@@ -1,1 +1,32 @@
-import java.nio.file.*;import java.util.*;public final class Lab10Test{public static void main(String[]a)throws Exception{Path d=Files.createTempDirectory("lab10-");Path t=d.resolve("five.txt");var lines=List.of("HIT","Harare tech","Carlton","Tadiwa","Leo");FileTextDemo.writeLines(t,lines);check(FileTextDemo.readLines(t).equals(lines),"roundtrip");var stats=FileTextDemo.stats(t);check(stats.lines()==5&&stats.words()==6,"stats");var n=new ArrayList<>(List.of(1,2,3,4));StreamExercises.removeEvens(n);check(n.equals(List.of(1,3)),"predicate");var s=List.of(new Student("Tadiwa",70),new Student("Carlton",90),new Student("Leo",80));check(StreamExercises.aboveAverage(s).equals(List.of("Carlton")),"stream");var repo=new LearnerRepository(d.resolve("learners.csv"));var learners=List.of(new Learner("Rudo",1,85),new Learner("Farai",2,75),new Learner("Kudzai",3,55));repo.save(learners);check(repo.load().equals(learners),"csv");var groups=repo.groupByBand(learners);check(groups.get(GradeBand.A).size()==1&&groups.get(GradeBand.C).size()==1,"groups");repo.writeReports(d,groups);check(Files.exists(d.resolve("band-A.txt")),"reports");System.out.println("Lab10Test: PASS");}static void check(boolean c,String m){if(!c)throw new AssertionError(m);}}
+import java.nio.file.*;
+import java.util.*;
+
+public final class Lab10Test {
+    public static void main(String[] a) throws Exception {
+        Path d = Files.createTempDirectory("lab10-");
+        Path t = d.resolve("five.txt");
+        var lines = List.of("HIT", "Harare tech", "Carlton", "Tadiwa", "Leo");
+        FileTextDemo.writeLines(t, lines);
+        check(FileTextDemo.readLines(t).equals(lines), "roundtrip");
+        var stats = FileTextDemo.stats(t);
+        check(stats.lines() == 5 && stats.words() == 6, "stats");
+        var n = new ArrayList<>(List.of(1, 2, 3, 4));
+        StreamExercises.removeEvens(n);
+        check(n.equals(List.of(1, 3)), "predicate");
+        var s = List.of(new Student("Tadiwa", 70), new Student("Carlton", 90), new Student("Leo", 80));
+        check(StreamExercises.aboveAverage(s).equals(List.of("Carlton")), "stream");
+        var repo = new LearnerRepository(d.resolve("learners.csv"));
+        var learners = List.of(new Learner("Rudo", 1, 85), new Learner("Farai", 2, 75), new Learner("Kudzai", 3, 55));
+        repo.save(learners);
+        check(repo.load().equals(learners), "csv");
+        var groups = repo.groupByBand(learners);
+        check(groups.get(GradeBand.A).size() == 1 && groups.get(GradeBand.C).size() == 1, "groups");
+        repo.writeReports(d, groups);
+        check(Files.exists(d.resolve("band-A.txt")), "reports");
+        System.out.println("Lab10Test: PASS");
+    }
+
+    static void check(boolean c, String m) {
+        if (!c) throw new AssertionError(m);
+    }
+}

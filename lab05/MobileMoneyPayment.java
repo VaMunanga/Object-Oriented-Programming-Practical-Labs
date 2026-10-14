@@ -1,1 +1,19 @@
-public class MobileMoneyPayment implements Payment{private final String provider,phone;private final double amount;public MobileMoneyPayment(String p,String n,double a){if(p==null||p.isBlank()||n==null||n.isBlank()||a<=0)throw new IllegalArgumentException();provider=p;phone=n;amount=a;}public double amountZiG(){return amount;}public String process(){return provider+" "+phone+" paid ZiG %.2f".formatted(amount);}}
+public class MobileMoneyPayment implements Payment {
+    private final String provider, phone;
+    private final double amount;
+
+    public MobileMoneyPayment(String p, String n, double a) {
+        if (p == null || p.isBlank() || n == null || n.isBlank() || a <= 0) throw new IllegalArgumentException();
+        provider = p;
+        phone = n;
+        amount = a;
+    }
+
+    public double amountZiG() {
+        return amount;
+    }
+
+    public String process() {
+        return provider + " " + phone + " paid ZiG %.2f".formatted(amount);
+    }
+}

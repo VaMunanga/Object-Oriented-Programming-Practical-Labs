@@ -1,1 +1,13 @@
-public class Manager extends Employee{private final double salary,allowance;public Manager(String n,double s,double a){super(n);salary=s;allowance=a;}public double monthlyPay(){return salary+allowance;}}
+public class Manager extends Employee {
+    private final double salary, allowance;
+
+    public Manager(String n, double s, double a) {
+        super(n);
+        salary = s;
+        allowance = a;
+    }
+
+    public double monthlyPay() {
+        return salary + allowance;
+    }
+}

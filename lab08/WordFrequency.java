@@ -1,1 +1,13 @@
-import java.util.*;import java.util.function.Function;import java.util.stream.*;public class WordFrequency{public static Map<String,Integer>count(String text){return Arrays.stream(text.toLowerCase().split("[^a-z0-9]+" )).filter(w->!w.isBlank()).collect(Collectors.groupingBy(Function.identity(),Collectors.summingInt(w->1))).entrySet().stream().sorted(Map.Entry.<String,Integer>comparingByValue().reversed().thenComparing(Map.Entry.comparingByKey())).collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue,(a,b)->a,LinkedHashMap::new));}public static void main(String[]a){System.out.println(count("Code builds business and code builds skill"));}}
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.*;
+
+public class WordFrequency {
+    public static Map<String, Integer> count(String text) {
+        return Arrays.stream(text.toLowerCase().split("[^a-z0-9]+")).filter(w -> !w.isBlank()).collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(w -> 1))).entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed().thenComparing(Map.Entry.comparingByKey())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> a, LinkedHashMap::new));
+    }
+
+    public static void main(String[] a) {
+        System.out.println(count("Code builds business and code builds skill"));
+    }
+}

@@ -1,1 +1,31 @@
-import java.util.OptionalInt;public class DivisionUtility{public static String divide(String a,String b){try{int x=Integer.parseInt(a);int y=Integer.parseInt(b);if(y==0)throw new ArithmeticException("division by zero");return Integer.toString(x/y);}catch(NumberFormatException e){return "Error: non-numeric input";}catch(ArithmeticException e){return "Error: division by zero";}}public static OptionalInt safeElement(int[]a,int i){try{return OptionalInt.of(a[i]);}catch(ArrayIndexOutOfBoundsException e){return OptionalInt.empty();}}public static void main(String[]a){System.out.println(divide("42","2"));System.out.println(divide("ten","2"));System.out.println(divide("10","0"));System.out.println(safeElement(new int[]{1,2},5));}}
+import java.util.OptionalInt;
+
+public class DivisionUtility {
+    public static String divide(String a, String b) {
+        try {
+            int x = Integer.parseInt(a);
+            int y = Integer.parseInt(b);
+            if (y == 0) throw new ArithmeticException("division by zero");
+            return Integer.toString(x / y);
+        } catch (NumberFormatException e) {
+            return "Error: non-numeric input";
+        } catch (ArithmeticException e) {
+            return "Error: division by zero";
+        }
+    }
+
+    public static OptionalInt safeElement(int[] a, int i) {
+        try {
+            return OptionalInt.of(a[i]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            return OptionalInt.empty();
+        }
+    }
+
+    public static void main(String[] a) {
+        System.out.println(divide("42", "2"));
+        System.out.println(divide("ten", "2"));
+        System.out.println(divide("10", "0"));
+        System.out.println(safeElement(new int[]{1, 2}, 5));
+    }
+}

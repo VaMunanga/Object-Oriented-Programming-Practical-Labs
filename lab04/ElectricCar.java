@@ -1,1 +1,15 @@
-public class ElectricCar extends Car {private final int rangeKm;public ElectricCar(String make,String model,int rangeKm){super(make,model);if(rangeKm<=0)throw new IllegalArgumentException();this.rangeKm=rangeKm;trace.add("ElectricCar("+rangeKm+" km)");System.out.println(trace.get(trace.size()-1));}public static void main(String[]a){System.out.println(new ElectricCar("BYD","Atto 3",420).constructionTrace());}}
+public class ElectricCar extends Car {
+    private final int rangeKm;
+
+    public ElectricCar(String make, String model, int rangeKm) {
+        super(make, model);
+        if (rangeKm <= 0) throw new IllegalArgumentException();
+        this.rangeKm = rangeKm;
+        trace.add("ElectricCar(" + rangeKm + " km)");
+        System.out.println(trace.get(trace.size() - 1));
+    }
+
+    public static void main(String[] a) {
+        System.out.println(new ElectricCar("BYD", "Atto 3", 420).constructionTrace());
+    }
+}

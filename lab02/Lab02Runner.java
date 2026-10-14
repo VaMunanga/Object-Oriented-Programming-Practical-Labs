@@ -1,5 +1,6 @@
 public final class Lab02Runner {
-    private Lab02Runner() { }
+    private Lab02Runner() {
+    }
 
     public static void main(String[] args) {
         System.out.println("=== Lab 02 - Exercise 1: Circle Constructors and Counter ===");

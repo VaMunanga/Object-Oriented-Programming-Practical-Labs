@@ -1,1 +1,5 @@
-public interface ShonaGreeting{default String hello(){return "Mhoro";}}
+public interface ShonaGreeting {
+    default String hello() {
+        return "Mhoro";
+    }
+}

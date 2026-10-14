@@ -1,1 +1,33 @@
-import java.util.Objects;public class Book{private final String isbn,title;public Book(String i,String t){if(i==null||i.isBlank()||t==null||t.isBlank())throw new IllegalArgumentException();isbn=i;title=t;}@Override public boolean equals(Object o){return this==o||(o instanceof Book b&&isbn.equals(b.isbn));}@Override public int hashCode(){return Objects.hash(isbn);}@Override public String toString(){return title+" ["+isbn+"]";}public static void main(String[]a){var s=new java.util.HashSet<Book>();s.add(new Book("978-1","Java"));s.add(new Book("978-1","Duplicate"));System.out.println(s);}}
+import java.util.Objects;
+
+public class Book {
+    private final String isbn, title;
+
+    public Book(String i, String t) {
+        if (i == null || i.isBlank() || t == null || t.isBlank()) throw new IllegalArgumentException();
+        isbn = i;
+        title = t;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return this == o || (o instanceof Book b && isbn.equals(b.isbn));
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(isbn);
+    }
+
+    @Override
+    public String toString() {
+        return title + " [" + isbn + "]";
+    }
+
+    public static void main(String[] a) {
+        var s = new java.util.HashSet<Book>();
+        s.add(new Book("978-1", "Java"));
+        s.add(new Book("978-1", "Duplicate"));
+        System.out.println(s);
+    }
+}

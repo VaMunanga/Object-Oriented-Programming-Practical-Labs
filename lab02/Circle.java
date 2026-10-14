@@ -12,9 +12,17 @@ public class Circle {
         count++;
     }
 
-    public double getRadius() { return radius; }
-    public double area() { return Math.PI * radius * radius; }
-    public static int getCount() { return count; }
+    public double getRadius() {
+        return radius;
+    }
+
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+
+    public static int getCount() {
+        return count;
+    }
 
     public static void main(String[] args) {
         var unit = new Circle();

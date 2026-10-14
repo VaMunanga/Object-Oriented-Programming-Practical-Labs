@@ -1,1 +1,22 @@
-import java.nio.file.*;import java.util.*;public final class Lab10Runner{public static void main(String[]a)throws Exception{Path d=Files.createTempDirectory("lab10-run-");System.out.println("=== Lab 10 - Exercise 1: File Round Trip and Stats ===");Path p=d.resolve("notes.txt");FileTextDemo.writeLines(p,List.of("HIT","Harare tech","Carlton","Tadiwa","Leo"));System.out.println(FileTextDemo.readLines(p));System.out.println(FileTextDemo.stats(p));System.out.println("\n=== Lab 10 - Exercise 2: Predicate and Streams ===");StreamExercises.main(a);System.out.println("\n=== Lab 10 - Exercise 3: CSV and Grade Reports ===");var r=new LearnerRepository(d.resolve("learners.csv"));var l=List.of(new Learner("Rudo",1,85),new Learner("Farai",2,75),new Learner("Kudzai",3,55));r.save(l);var g=r.groupByBand(r.load());r.writeReports(d,g);System.out.println(g);}}
+import java.nio.file.*;
+import java.util.*;
+
+public final class Lab10Runner {
+    public static void main(String[] a) throws Exception {
+        Path d = Files.createTempDirectory("lab10-run-");
+        System.out.println("=== Lab 10 - Exercise 1: File Round Trip and Stats ===");
+        Path p = d.resolve("notes.txt");
+        FileTextDemo.writeLines(p, List.of("HIT", "Harare tech", "Carlton", "Tadiwa", "Leo"));
+        System.out.println(FileTextDemo.readLines(p));
+        System.out.println(FileTextDemo.stats(p));
+        System.out.println("\n=== Lab 10 - Exercise 2: Predicate and Streams ===");
+        StreamExercises.main(a);
+        System.out.println("\n=== Lab 10 - Exercise 3: CSV and Grade Reports ===");
+        var r = new LearnerRepository(d.resolve("learners.csv"));
+        var l = List.of(new Learner("Rudo", 1, 85), new Learner("Farai", 2, 75), new Learner("Kudzai", 3, 55));
+        r.save(l);
+        var g = r.groupByBand(r.load());
+        r.writeReports(d, g);
+        System.out.println(g);
+    }
+}

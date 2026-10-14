@@ -1,1 +1,3 @@
-public interface Flyable{String fly();}
+public interface Flyable {
+    String fly();
+}

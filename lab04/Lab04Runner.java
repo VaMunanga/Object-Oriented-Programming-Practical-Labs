@@ -1,1 +1,16 @@
-public final class Lab04Runner{private Lab04Runner(){}public static void main(String[]a){System.out.println("=== Lab 04 - Exercise 1: Person Hierarchy ===");Student.main(a);Teacher.main(a);System.out.println("\n=== Lab 04 - Exercise 2: Multilevel Constructors ===");ElectricCar.main(a);System.out.println("\n=== Lab 04 - Exercise 3: Required super(...) ===");Dog.main(a);System.out.println("\n=== Lab 04 - Exercise 4: Composition-Based Stack ===");SafeStack.main(a);}}
+public final class Lab04Runner {
+    private Lab04Runner() {
+    }
+
+    public static void main(String[] a) {
+        System.out.println("=== Lab 04 - Exercise 1: Person Hierarchy ===");
+        Student.main(a);
+        Teacher.main(a);
+        System.out.println("\n=== Lab 04 - Exercise 2: Multilevel Constructors ===");
+        ElectricCar.main(a);
+        System.out.println("\n=== Lab 04 - Exercise 3: Required super(...) ===");
+        Dog.main(a);
+        System.out.println("\n=== Lab 04 - Exercise 4: Composition-Based Stack ===");
+        SafeStack.main(a);
+    }
+}
