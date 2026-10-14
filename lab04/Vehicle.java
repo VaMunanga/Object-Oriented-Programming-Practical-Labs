@@ -1,0 +1,1 @@
+import java.util.ArrayList;import java.util.List;public class Vehicle {protected final List<String> trace=new ArrayList<>();protected final String make;public Vehicle(String make){this.make=make;trace.add("Vehicle("+make+")");System.out.println(trace.get(trace.size()-1));}public List<String> constructionTrace(){return List.copyOf(trace);}}
