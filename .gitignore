@@ -1,0 +1,13 @@
+*.class
+*.csv
+*.txt
+.build/
+.superpowers/
+.antigravitycli/
+.idea/
+.vscode/
+out/
+*.iml
+.classpath
+.project
+.settings/
