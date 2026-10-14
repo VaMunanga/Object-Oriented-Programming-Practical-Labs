@@ -1,0 +1,1 @@
+public class BindingChild extends BindingParent{public String label="child field";@Override public String describe(){return "child method";}public static String category(){return "child static";}public static void main(String[]a){BindingParent p=new BindingChild();System.out.println(p.describe());System.out.println(p.label);System.out.println(BindingParent.category());}}
