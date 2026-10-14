@@ -23,6 +23,16 @@ public final class Lab11Test {
         check(lib.searchByTitle("java").size() == 1 && lib.overdueItems(LocalDate.of(2026, 2, 1)).size() == 1, "streams");
         lib.giveBack("M1", "B1", LocalDate.of(2026, 1, 10));
         check(lib.findItem("B1").isAvailable(), "return");
+        for (int i = 2; i <= 5; i++) lib.addItem(new Book("B" + i, "Book " + i, "Author", "ISBN-" + i));
+        lib.borrow("M1", "B2", LocalDate.of(2026, 2, 1));
+        lib.borrow("M1", "B3", LocalDate.of(2026, 2, 1));
+        lib.borrow("M1", "B4", LocalDate.of(2026, 2, 1));
+        try {
+            lib.borrow("M1", "B5", LocalDate.of(2026, 2, 1));
+            throw new AssertionError("member limit");
+        } catch (MemberLimitExceededException expected) {
+            check(lib.findItem("B5").isAvailable(), "failed borrow leaves item available");
+        }
         Path d = Files.createTempDirectory("library-");
         var repo = new LibraryCsvRepository(d);
         repo.save(lib);

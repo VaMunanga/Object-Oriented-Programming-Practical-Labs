@@ -6,6 +6,10 @@ public final class Lab10Test {
         Path d = Files.createTempDirectory("lab10-");
         Path t = d.resolve("five.txt");
         var lines = List.of("HIT", "Harare tech", "Carlton", "Tadiwa", "Leo");
+        check(
+                FileTextDemo.readFiveLines(new Scanner("HIT\nHarare tech\nCarlton\nTadiwa\nLeo\n"))
+                        .equals(lines),
+                "five typed lines");
         FileTextDemo.writeLines(t, lines);
         check(FileTextDemo.readLines(t).equals(lines), "roundtrip");
         var stats = FileTextDemo.stats(t);

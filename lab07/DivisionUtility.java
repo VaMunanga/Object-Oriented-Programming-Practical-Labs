@@ -1,6 +1,15 @@
 import java.util.OptionalInt;
+import java.util.Scanner;
 
 public class DivisionUtility {
+    public static String divideFromScanner(Scanner scanner) {
+        try {
+            return divide(Integer.toString(scanner.nextInt()), Integer.toString(scanner.nextInt()));
+        } catch (java.util.NoSuchElementException e) {
+            return "Error: non-numeric input";
+        }
+    }
+
     public static String divide(String a, String b) {
         try {
             int x = Integer.parseInt(a);

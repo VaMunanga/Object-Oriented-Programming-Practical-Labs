@@ -3,6 +3,8 @@ import java.util.*;
 public final class Lab07Test {
     public static void main(String[] a) throws Exception {
         check(DivisionUtility.divide("10", "2").equals("5"), "divide");
+        check(DivisionUtility.divideFromScanner(new Scanner("10 2")).equals("5"), "scanner divide");
+        check(DivisionUtility.divideFromScanner(new Scanner("ten 2")).contains("non-numeric"), "scanner input");
         check(DivisionUtility.divide("ten", "2").contains("non-numeric"), "parse");
         check(DivisionUtility.divide("10", "0").contains("zero"), "zero");
         check(DivisionUtility.safeElement(new int[]{4, 5}, 9).isEmpty(), "index");
