@@ -1,0 +1,1 @@
+public class InsufficientFundsException extends Exception{private final double shortfall;public InsufficientFundsException(double s){super("Insufficient funds; shortfall ZiG %.2f".formatted(s));shortfall=s;}public double getShortfall(){return shortfall;}}
