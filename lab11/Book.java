@@ -1,0 +1,1 @@
+public class Book extends LibraryItem{private final String author,isbn;public Book(String i,String t,String a,String n){super(i,t);author=text(a);isbn=text(n);}public int loanPeriodDays(){return 14;}public String author(){return author;}public String isbn(){return isbn;}}

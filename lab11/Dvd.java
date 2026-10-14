@@ -1,0 +1,1 @@
+public class Dvd extends LibraryItem{private final int durationMinutes;public Dvd(String i,String t,int d){super(i,t);if(d<=0)throw new IllegalArgumentException();durationMinutes=d;}public int loanPeriodDays(){return 7;}public int durationMinutes(){return durationMinutes;}}
