@@ -21,6 +21,7 @@ public class GenericSorter {
         bubbleSort(i);
         bubbleSort(s);
         System.out.println(Arrays.toString(i));
-        System.out.println(Arrays.toString(s));/* EXPLAIN: int is primitive and cannot replace erased reference type T; use Integer[]. */
+        System.out.println(Arrays.toString(s));
+        // EXPLAIN: type erasure substitutes a reference bound for T; primitives such as int cannot be T.
     }
 }

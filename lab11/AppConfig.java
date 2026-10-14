@@ -1,4 +1,5 @@
 public final class AppConfig {
+    // EXPLAIN: eager class initialisation creates exactly one shared Singleton instance.
     private static final AppConfig INSTANCE = new AppConfig();
 
     private AppConfig() {

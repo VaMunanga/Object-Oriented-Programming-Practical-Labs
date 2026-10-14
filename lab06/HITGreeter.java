@@ -1,6 +1,7 @@
 public class HITGreeter implements EnglishGreeting, ShonaGreeting {
     @Override
     public String hello() {
+        // EXPLAIN: qualified super calls explicitly resolve two inherited default methods.
         return EnglishGreeting.super.hello() + " | " + ShonaGreeting.super.hello();
     }
 

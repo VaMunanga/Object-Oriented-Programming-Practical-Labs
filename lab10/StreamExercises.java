@@ -9,6 +9,7 @@ public class StreamExercises {
 
     public static List<String> aboveAverage(List<Student> s) {
         double avg = s.stream().mapToDouble(Student::marks).average().orElse(0);
+        // EXPLAIN: intermediate operations are lazy; toList() triggers and materialises the pipeline.
         return s.stream().filter(x -> x.marks() > avg).map(Student::name).sorted().toList();
     }
 

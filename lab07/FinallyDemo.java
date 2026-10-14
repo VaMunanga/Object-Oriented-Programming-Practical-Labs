@@ -6,6 +6,7 @@ public class FinallyDemo {
             trace.add("try");
             return 21;
         } finally {
+            // EXPLAIN: Java executes finally after evaluating return but before control reaches the caller.
             trace.add("finally");
             System.out.println("finally executes before return");
         }

@@ -14,6 +14,7 @@ public class Book {
         return this == o || (o instanceof Book b && isbn.equals(b.isbn));
     }
 
+    // EXPLAIN: equal ISBNs must produce equal hash codes so HashSet can enforce value uniqueness.
     @Override
     public int hashCode() {
         return Objects.hash(isbn);
