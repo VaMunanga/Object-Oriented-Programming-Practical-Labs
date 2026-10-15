@@ -1,6 +1,10 @@
 # Object-Oriented Programming Practical Labs
 
-Java exercises for the Object-Oriented Programming course at Harare Institute of Technology. The repository contains eleven practical labs, from classes and objects through a library management mini-project. The source lab manual, credited to **@Kenneth** and dated 28 September 2026, is preserved below. The student's full name is not recorded in the project files.
+Java exercises for the Object-Oriented Programming course at Harare Institute of Technology. The repository contains eleven practical labs, from classes and objects through a library management mini-project. The source lab manual, credited to **@Kenneth** and dated 28 September 2026, is preserved below.
+
+- **Student:** Takudzwa M Munanga
+- **Registration number:** H250363V
+- **Course code:** ICS2101
 
 ## Repository guide
 
