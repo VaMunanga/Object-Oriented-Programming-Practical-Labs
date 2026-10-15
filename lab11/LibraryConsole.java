@@ -1,10 +1,19 @@
+import java.io.IOException;
+import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.Scanner;
 
 public class LibraryConsole {
-    public static void main(String[] a) {
-        var l = new Library();
+    public static void main(String[] a) throws IOException {
+        var repository = new LibraryCsvRepository(Path.of(a.length == 0 ? "library-data" : a[0]));
         try (var s = new Scanner(System.in)) {
+            run(s, repository);
+        }
+    }
+
+    static void run(Scanner s, LibraryCsvRepository repository) throws IOException {
+        var l = repository.load();
+        try {
             System.out.println("1 add book | 2 add DVD | 3 register | 4 borrow | 5 return | 6 overdue | 7 search | 0 exit");
             while (s.hasNextLine()) {
                 String c = s.nextLine().trim();
@@ -24,6 +33,8 @@ public class LibraryConsole {
                     System.out.println("Error: " + e.getMessage());
                 }
             }
+        } finally {
+            repository.save(l);
         }
     }
 }

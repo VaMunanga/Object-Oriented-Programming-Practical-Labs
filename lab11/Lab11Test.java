@@ -1,5 +1,6 @@
 import java.nio.file.*;
 import java.time.*;
+import java.util.Scanner;
 
 public final class Lab11Test {
     public static void main(String[] a) throws Exception {
@@ -38,6 +39,12 @@ public final class Lab11Test {
         repo.save(lib);
         var loaded = repo.load();
         check(loaded.searchByTitle("startup").size() == 1 && loaded.findMember("M1").name().equals("Tadiwa"), "persistence");
+        Path consoleDir = Files.createTempDirectory("library-console-");
+        var consoleRepo = new LibraryCsvRepository(consoleDir);
+        LibraryConsole.run(new Scanner("1\nB1\nJava at HIT\nAuthor\n978-1\n3\nM1\nTadiwa\n4\nM1\nB1\n0\n"), consoleRepo);
+        check(!consoleRepo.load().findItem("B1").isAvailable(), "console saves active loan");
+        LibraryConsole.run(new Scanner("5\nM1\nB1\n0\n"), consoleRepo);
+        check(consoleRepo.load().findItem("B1").isAvailable(), "console reloads and saves return");
         System.out.println("Lab11Test: PASS");
     }
 
